@@ -1,43 +1,8 @@
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches:
-      - main  # Trigger on pushes to the main branch
-  pull_request:
-    branches:
-      - main  # Trigger on pull requests to the main branch
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Run tests
-        run: npm test
-        
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build  # Wait for the 'build' job to complete successfully
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
-      # Example deployment step (modify as per your deployment strategy)
-      - name: Deploy to production
-        run: |
-          echo Deploying to production...
-          # Add deployment commands here
-            
+name: hello-world
+  on: push
+    jobs:
+      my-job:
+        runs-on: ubunu-latest
+        steps:
+          name: my-step
+          run: echo:Hello world!"
