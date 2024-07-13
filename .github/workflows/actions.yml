@@ -4,5 +4,5 @@ name: hello-world
       my-job:
         runs-on: ubunu-latest
         steps:
-          name: my-step
+         - name: my-step
           run: echo:Hello world!"
